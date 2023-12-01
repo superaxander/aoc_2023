@@ -1,0 +1,19 @@
+[package]
+name = "aoc_2023"
+version = "0.1.0"
+authors = ["Alexander Stekelenburg <anoniem.axander@gmail.com>"]
+edition = "2021"
+
+[profile.release]
+debug = true
+
+[dependencies]
+log = "0.4.20"
+pretty_env_logger = "0.5.0"
+regex = "1.10.2"
+mimalloc = "0.1.39"
+anyhow = "1.0.75"
+bit-vec = "0.6.3"
+itertools = "0.11.0"
+rayon = "1.8.0"
+
