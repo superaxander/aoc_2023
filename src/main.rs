@@ -1,4 +1,4 @@
-#![feature(array_windows)]
+// #![feature(array_windows)]
 #![feature(int_roundings)]
 #![feature(let_chains)]
 #![feature(lazy_cell)]
@@ -18,7 +18,7 @@ static GLOBAL: MiMalloc = MiMalloc;
 
 mod common;
 mod day1;
-// mod day2;
+mod day2;
 // mod day3;
 // mod day4;
 // mod day5;
@@ -49,7 +49,7 @@ fn main() {
     pretty_env_logger::init();
     let now = Instant::now();
     Day::Combined(day1::main).run("day 1");
-    // Day::Combined(day2::main).run("day 2");
+    Day::Combined(day2::main).run("day 2");
     // Day::Combined(day3::main).run("day 3");
     // Day::Combined(day4::main).run("day 4");
     // Day::Combined(day5::main).run("day 5");
