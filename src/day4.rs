@@ -3,7 +3,6 @@ use anyhow::Result;
 use crate::common;
 use std::collections::HashSet;
 
-#[allow(clippy::cast_possible_truncation)]
 pub fn main() -> Result<(usize, usize)> {
     let lines = common::read_lines("inputs/4.txt")?;
 

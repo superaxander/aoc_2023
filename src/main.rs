@@ -1,4 +1,5 @@
 // #![feature(array_windows)]
+#![feature(iter_array_chunks)]
 #![feature(int_roundings)]
 #![feature(let_chains)]
 #![feature(lazy_cell)]
@@ -21,7 +22,7 @@ mod day1;
 mod day2;
 mod day3;
 mod day4;
-// mod day5;
+mod day5;
 // mod day6;
 // mod day7;
 // mod day8;
@@ -52,7 +53,7 @@ fn main() {
     Day::Combined(day2::main).run("day 2");
     Day::Combined(day3::main).run("day 3");
     Day::Combined(day4::main).run("day 4");
-    // Day::Combined(day5::main).run("day 5");
+    Day::Combined(day5::main).run("day 5");
     // Day::Combined(day6::main).run("day 6");
     // Day::Combined(day7::main).run("day 7");
     // Day::Combined(day8::main).run("day 8");
