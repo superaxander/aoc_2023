@@ -5,8 +5,12 @@ use crate::common;
 #[allow(clippy::bool_to_int_with_if)]
 #[allow(clippy::too_many_lines)]
 pub fn main() -> Result<(usize, usize)> {
-    let values_a = [ '2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A', ];
-    let values_b = [ 'J', '2', '3', '4', '5', '6', '7', '8', '9', 'T', 'Q', 'K', 'A', ];
+    let values_a = [
+        '2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A',
+    ];
+    let values_b = [
+        'J', '2', '3', '4', '5', '6', '7', '8', '9', 'T', 'Q', 'K', 'A',
+    ];
     let lines = common::read_lines("inputs/7.txt")?;
 
     let mut solution_a = 0;

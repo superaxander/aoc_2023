@@ -5,7 +5,7 @@ use crate::common::RE_WS;
 use std::fmt::Write;
 
 pub fn main() -> Result<(usize, usize)> {
-    let mut lines = common::read_lines("inputs/6")?;
+    let mut lines = common::read_lines("inputs/6.txt")?;
 
     let line = lines.next().unwrap()?;
     let line = line.trim();
