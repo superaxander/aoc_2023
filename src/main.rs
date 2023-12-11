@@ -29,7 +29,7 @@ mod day7;
 mod day8;
 mod day9;
 
-// mod day10;
+mod day10;
 mod day11;
 // mod day12;
 // mod day13;
@@ -59,7 +59,7 @@ fn main() {
     Day::Combined(day7::main).run("day 7");
     Day::Combined(day8::main).run("day 8");
     Day::Combined(day9::main).run("day 9");
-    // Day::Combined(day10::main).run("day 10");
+    Day::Combined(day10::main).run("day 10");
     Day::BoolSeparated(day11::main).run("day 11");
     // Day::Combined(day12::main).run("day 12");
     // Day::Combined(day13::main).run("day 13");
