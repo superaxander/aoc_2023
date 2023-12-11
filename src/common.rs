@@ -21,12 +21,13 @@ where
 }
 
 #[allow(dead_code)]
-pub enum Day<SolutionA: Display, SolutionB: Display> {
-    Combined(fn() -> Result<(SolutionA, SolutionB)>),
-    Separated(fn() -> Result<SolutionA>, fn() -> Result<SolutionB>),
+pub enum Day<SolutionA: Display> {
+    Combined(fn() -> Result<(SolutionA, SolutionA)>),
+    Separated(fn() -> Result<SolutionA>, fn() -> Result<SolutionA>),
+    BoolSeparated(fn(bool) -> Result<SolutionA>),
 }
 
-impl<SolutionA: Display, SolutionB: Display> Day<SolutionA, SolutionB> {
+impl<SolutionA: Display> Day<SolutionA> {
     fn run_with_result(&self, name: &str) -> Result<()> {
         match self {
             Day::Combined(func) => {
@@ -46,6 +47,16 @@ impl<SolutionA: Display, SolutionB: Display> Day<SolutionA, SolutionB> {
                 info!("Solution {}a: {}", name, solution_a);
                 info!("Solution {}b: {}", name, solution_b);
             }
+            Day::BoolSeparated(func) => {
+                let now = Instant::now();
+                let solution_a = func(false)?;
+                info!("Part a took {:#?}", now.elapsed());
+                let now = Instant::now();
+                let solution_b = func(true)?;
+                info!("Part b took {:#?}", now.elapsed());
+                info!("Solution {}a: {}", name, solution_a);
+                info!("Solution {}b: {}", name, solution_b);
+            }
         }
         Ok(())
     }
@@ -55,7 +66,7 @@ pub(crate) trait Runnable {
     fn run(&self, name: &str);
 }
 
-impl<SolutionA: Display, SolutionB: Display> Runnable for Day<SolutionA, SolutionB> {
+impl<SolutionA: Display> Runnable for Day<SolutionA> {
     fn run(&self, name: &str) {
         if let Err(e) = self.run_with_result(name) {
             error!("Error occurred running {}: {}", name, e);
