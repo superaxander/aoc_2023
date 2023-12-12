@@ -1,4 +1,3 @@
-// #![feature(array_windows)]
 #![feature(iter_map_windows)]
 #![feature(iter_array_chunks)]
 #![feature(int_roundings)]
@@ -31,7 +30,7 @@ mod day9;
 
 mod day10;
 mod day11;
-// mod day12;
+mod day12;
 // mod day13;
 // mod day14;
 // mod day15;
@@ -61,7 +60,7 @@ fn main() {
     Day::Combined(day9::main).run("day 9");
     Day::Combined(day10::main).run("day 10");
     Day::BoolSeparated(day11::main).run("day 11");
-    // Day::Combined(day12::main).run("day 12");
+    Day::Combined(day12::main).run("day 12");
     // Day::Combined(day13::main).run("day 13");
     // Day::Combined(day14::main).run("day 14");
     // Day::Combined(day15::main).run("day 15");
