@@ -3,7 +3,6 @@ use anyhow::Result;
 use crate::common;
 use std::collections::HashMap;
 
-
 pub fn main() -> Result<(usize, usize)> {
     let lines = common::read_lines("inputs/14.txt")?;
 
