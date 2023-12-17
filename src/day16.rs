@@ -4,7 +4,6 @@ use crate::common;
 use std::collections::HashSet;
 use std::collections::VecDeque;
 
-#[allow(clippy::match_on_vec_items)]
 pub fn main() -> Result<(usize, usize)> {
     let lines = common::read_lines("inputs/16.txt")?;
 
@@ -80,6 +79,7 @@ enum Direction {
     West,
 }
 
+#[allow(clippy::match_on_vec_items)]
 fn count_energized(
     grid: &[Vec<char>],
     start: (usize, usize, Direction),
@@ -127,8 +127,9 @@ fn count_energized(
             ),
             '|' => match d {
                 Direction::North | Direction::South => {
-                    move_beam(&mut beams, x, y, d, width, height)
+                    move_beam(&mut beams, x, y, d, width, height);
                 }
+
                 Direction::East | Direction::West => {
                     move_beam(&mut beams, x, y, Direction::North, width, height);
                     move_beam(&mut beams, x, y, Direction::South, width, height);
